@@ -11,6 +11,7 @@ module.exports.execute = async (client, message, args, Discord) => {
         const commands = fs.readdirSync(`${dir}${dirs}/`).filter(files => files.endsWith('.js'));
         if (commands.includes(`${command.info.name}.js`)) {
 			try {
+                delete require.cache[require.resolve(`../${dirs}/${command.info.name}.js`)];
 				const pull = require(`../${dirs}/${command.info.name}.js`);
 				client.commands.set(command.info.name, pull);
 				return message.channel.send(`Successfully reloaded ${command.info.name}!`);
