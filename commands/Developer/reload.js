@@ -1,4 +1,4 @@
-const { readdirSync } = require("fs");
+const fs = require("fs");
 
 module.exports.execute = async (client, message, args, Discord) => {
 
@@ -9,16 +9,14 @@ module.exports.execute = async (client, message, args, Discord) => {
     let dir = client.commandDir;
     fs.readdirSync(dir).forEach(dirs => {
         const commands = fs.readdirSync(`${dir}${dirs}/`).filter(files => files.endsWith('.js'));
-        if (commands.includes(`${commandName}.js`)) {
-			const commandFile = `${dir}${dirs}/${commandName}.js`;
+        if (commands.includes(`${command.info.name}.js`)) {
 			try {
-				delete require.cache[require.resolve(commandFile)];
-				const pull = require(commandName);
-				client.commands.set(commandName, pull);
-				return message.channel.send(`Successfully reloaded ${commandName}!`);
+				const pull = require(`../${dirs}/${command.info.name}.js`);
+				client.commands.set(command.info.name, pull);
+				return message.channel.send(`Successfully reloaded ${command.info.name}!`);
 			}
 			catch (err) {
-				message.channel.send(`There was an error while reloading \`${command.name}\``);
+				message.channel.send(`There was an error while reloading \`${command.info.name}\``);
 				return console.error(err);
 			}
         }
