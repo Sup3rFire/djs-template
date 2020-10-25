@@ -16,9 +16,7 @@ module.exports = async (client, Discord, message) => {
     let useMPrefix = false;
     let prefix;
 
-    const prefixRegex = new RegExp(`^(<@!?${client.user.id}>)\\s*`);
-
-    if (prefixRegex.test(message.content.split(" ")[0])) {
+    if (message.content.replace("!", "").startsWith(`<@${client.user.id}>`)) {
         prefix = client.prefix[0];
         useMPrefix = true;
     }
