@@ -3,13 +3,13 @@
 const Discord = require('discord.js'),
     client = new Discord.Client(),
     fs = require("fs"),
-    dir = './commands/'
     Keyv = require('keyv');
 
 require('dotenv').config();
 
 client.blacklist = new Keyv(`sqlite://db/blacklist.sqlite`);
 client.blacklist.on('error', err => console.error('Blacklist Keyv connection error:', err));
+client.commandDir = './commands/';
 
 client.color = "#FF6464";
 client.prefix = ['.'];
@@ -32,6 +32,7 @@ fs.readdir("./events/", (err, files) => {
 client.commands = new Discord.Collection();
 client.cooldowns = new Discord.Collection();
 
+let dir = client.commandDir;
 fs.readdirSync(dir).forEach(dirs => {
     const commands = fs.readdirSync(`${dir}${dirs}/`).filter(files => files.endsWith('.js'));
     for (const file of commands) {

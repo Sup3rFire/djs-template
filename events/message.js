@@ -39,7 +39,7 @@ module.exports = async (client, Discord, message) => {
 
     const commandName = args.shift().toLowerCase();
 
-    const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+    const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.info.aliases && cmd.info.aliases.includes(commandName));
 
     if (!command) {
         if (useMPrefix) {
@@ -77,15 +77,20 @@ module.exports = async (client, Discord, message) => {
             return message.reply(`I can't execute \`${command.info.name}\` inside DMs!`);
         }
         if (command.permission && !message.member.hasPermission(command.permission) && message.author.id != message.guild.ownerID) {
-            console.log(`User (${message.author.tag}) with ID (${message.author.id}) tried to execute ${command.info.name} in DMs, but ${command.info.name} requires permission ${command.permission}`);
+            console.log(`User (${message.author.tag}) with ID (${message.author.id}) tried to execute ${command.info.name}, but ${command.info.name} requires permission ${command.permission}`);
             return message.reply(`You don't have permissions to execute this command!`);
         }
     }
 
-    if (command.args && !args.length) {
+    if (command.info.developer && !client.developers.includes(message.author.id)) {
+        console.log(`User (${message.author.tag}) with ID (${message.author.id}) tried to execute ${command.info.name}, but ${command.info.name} requires him to be a developer`);
+        return message.reply(`You must be a bot developer to execute this command!`);
+    }
+
+    if (command.info.args && !args.length) {
         console.log(`User (${message.author.tag}) with ID (${message.author.id}) tried to execute ${command.info.name} without arguments, but ${command.info.name} requires arguments.`);
         let reply = `You didn't provide any arguments, ${message.author}!`;
-        if (command.usage) {
+        if (command.info.usage) {
             reply += `\nThe proper usage would be: \`${prefix}${command.info.name} ${command.usage}\``;
         }
         

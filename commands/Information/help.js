@@ -4,7 +4,7 @@ module.exports.execute = async (client, message, args, Discord) => {
 
     const { commands } = client;
 
-    let dir = './commands/';
+    let dir = client.commandDir;
 
     if (!args.length) {
 
@@ -28,7 +28,7 @@ module.exports.execute = async (client, message, args, Discord) => {
     } else {
                 
         const name = args.join(" ").toLowerCase();
-        const command = commands.get(name) || commands.find(c => c.aliases && c.aliases.includes(name));
+        const command = commands.get(name) || commands.find(c => c.info.aliases && c.info.aliases.includes(name));
         let category;
         if (!command) {
             let categories = readdirSync(dir);
@@ -74,7 +74,10 @@ module.exports.execute = async (client, message, args, Discord) => {
             let commandsCategory = [];
 
             readdirSync(`${dir}${category}/`).filter(files => files.endsWith('.js')).forEach( (dirs, index) => {
-                commandsCategory[index] = `**${dirs.substring(0, dirs.length - 3)}**`;
+				let commandName = dirs.substring(0, dirs.length - 3);
+				let commandDescription = commands.get(commandName).info.description;
+                commandsCategory[index] = `**${commandName}**`;
+				if (commandDescription) commandsCategory[index] += `\n${commandDescription}`;
             });
 
             const categoryEmbed = new Discord.MessageEmbed()
