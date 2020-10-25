@@ -13,6 +13,7 @@ client.commandDir = './commands/';
 
 client.color = "#FF6464";
 client.prefix = ['.'];
+client.developers = ['337024000330956811'];
 
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);

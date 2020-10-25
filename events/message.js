@@ -71,7 +71,7 @@ module.exports = async (client, Discord, message) => {
     timestamps.set(message.author.id, now);
     setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
-    if (command.guildOnly) {
+    if (command.info.guildOnly) {
         if (message.channel.type !== 'text') {
             console.log(`User (${message.author.tag}) with ID (${message.author.id}) tried to execute ${command.info.name} in DMs, but ${command.info.name} is a guild only command.`);
             return message.reply(`I can't execute \`${command.info.name}\` inside DMs!`);
@@ -91,7 +91,7 @@ module.exports = async (client, Discord, message) => {
         console.log(`User (${message.author.tag}) with ID (${message.author.id}) tried to execute ${command.info.name} without arguments, but ${command.info.name} requires arguments.`);
         let reply = `You didn't provide any arguments, ${message.author}!`;
         if (command.info.usage) {
-            reply += `\nThe proper usage would be: \`${prefix}${command.info.name} ${command.usage}\``;
+            reply += `\nThe proper usage would be: \`${prefix}${command.info.name} ${command.info.usage}\``;
         }
         
         return message.channel.send(reply);
