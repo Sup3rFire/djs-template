@@ -3,7 +3,7 @@ const { readdirSync } = require("fs");
 module.exports.execute = async (client, message, args, Discord) => {
 
 	const commandName = args.join(" ").toLowerCase()
-    const command = commands.get(commandName) || commands.find(c => c.info.aliases && c.info.aliases.includes(commandName));
+    const command = client.commands.get(commandName) || client.commands.find(c => c.info.aliases && c.info.aliases.includes(commandName));
     if (!command) return message.channel.send("That command doesn't exist!");
     
     let dir = client.commandDir;
