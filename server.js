@@ -9,6 +9,8 @@ require('dotenv').config();
 
 client.blacklist = new Keyv(`sqlite://db/blacklist.sqlite`);
 client.blacklist.on('error', err => console.error('Blacklist Keyv connection error:', err));
+client.prefixes = new Keyv(`sqlite://db/prefixes.sqlite`);
+client.prefixes.on('error', err => console.error('Prefixes Keyv connection error:', err));
 client.commandDir = './commands/';
 
 client.color = "#FF6464";
