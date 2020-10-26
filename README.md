@@ -1,15 +1,16 @@
 # discord.js Template
 
-This template was designed to be an easy way to start off a bot with a few essential features that would be made anyways.
+This template was designed to be an easy way to start off a discord.js bot with a few essential features that would probably be made anyways.
 
 ## Requirements
+
 - Node.js 12.0.0 or newer
 - A text editor
 - An internet connection (which you probably have considering you are reading this)
 
-## Basic Setup
+## Setup
 
-Install the packages using npm in the directory the folder is in
+Install the packages using npm in the template's directory
 
 ```bash
 npm install
@@ -37,12 +38,12 @@ client.developers = ['Developer ID', 'Another Developer ID'];
 
 ready.js
 ```javascript
-    let Statuses = [
-        {text: "some game", type: "PLAYING"},
-        {text: "some youtube video", type: "WATCHING"},
-        {text: "some music", type: "LISTENING"},
-        {text: "something", type: "STREAMING", url: "A Twitch URL"}
-    ];
+let Statuses = [
+    {text: "some game", type: "PLAYING"},
+    {text: "some youtube video", type: "WATCHING"},
+    {text: "some music", type: "LISTENING"},
+    {text: "something", type: "STREAMING", url: "A Twitch URL"}
+];
 ```
 
 ## License
