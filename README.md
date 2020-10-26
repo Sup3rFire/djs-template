@@ -1,10 +1,15 @@
 # discord.js Template
 
-This template was designed to be an easy way to start off a bot with a few essential features that would be made anyways.
+This template was designed by to be an easy way to start off a bot with a few essential features that would be made anyways.
+
+## Requirements
+- Node.js 12.0.0 or newer
+- A text editor
+- An internet connection (which you probably have considering you are reading this)
 
 ## Basic Setup
 
-Install the packages using npm install in the directory the folder is in
+Install the packages using npm in the directory the folder is in
 
 ```bash
 npm install
