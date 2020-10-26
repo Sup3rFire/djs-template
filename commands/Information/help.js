@@ -15,7 +15,7 @@ module.exports.execute = async (client, message, args, Discord) => {
         });
 
         var helpEmbed = new Discord.MessageEmbed()
-            .setColor(message.guild.me.displayHexColor || client.color)
+            .setColor(client.color)
             .setTitle("Help Menu")
             .setDescription([
                 `**${client.prefix}help [category name]** to view commands in a category.`, 
