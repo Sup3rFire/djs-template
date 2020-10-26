@@ -23,7 +23,7 @@ module.exports = async (client, Discord, message) => {
 
     let args;
     if (useMPrefix) {
-        args = message.content.split(/\s+/).slice(1);
+        args = message.content.split(">").slice(1).join(">").trim().split(/\s+/);
     } else {
 
         if (message.guild && await client.prefixes.get(message.guild.id)) {
@@ -62,7 +62,7 @@ module.exports = async (client, Discord, message) => {
             var mEmbed = new Discord.MessageEmbed()
                 .setTitle(`Online`)
                 .setColor(client.color)
-                .setDescription(`Prefix is: \`${client.prefix[0]}\``);
+                .setDescription(`Prefix is: \`${prefix}\``);
             return message.channel.send(mEmbed);
         } else return;
     }
