@@ -29,8 +29,10 @@ module.exports = async (client, Discord, message) => {
         if (message.guild && await client.prefixes.get(message.guild.id)) {
 
             let gPrefix = await client.prefixes.get(message.guild.id);
-            if (checkPrefix(message, gPrefix)) {
-                prefix = gPrefix
+            if (gPrefix) {
+                if (checkPrefix(message, gPrefix)) {
+                    prefix = gPrefix;
+                }
             } else {
                 client.prefix.forEach(item => {
                     if (checkPrefix(message, item)) {
