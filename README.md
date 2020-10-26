@@ -47,4 +47,4 @@ let Statuses = [
 ```
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/Sup3rFire/djs-template/blob/master/LICENSE)
