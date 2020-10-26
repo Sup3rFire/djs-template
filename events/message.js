@@ -1,4 +1,4 @@
-function checkPrefix(item) {
+function checkPrefix(message, item) {
     if (message.content.startsWith(item)) {
         return true;
     }
@@ -26,7 +26,7 @@ module.exports = async (client, Discord, message) => {
         args = message.content.slice(prefix.length).trim().split(/\s+/);
     } else {
         client.prefix.forEach(item => {
-            if (checkPrefix) {
+            if (checkPrefix(message, item)) {
                 prefix = item;
             }
         });
