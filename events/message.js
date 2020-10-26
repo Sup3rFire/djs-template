@@ -17,13 +17,13 @@ module.exports = async (client, Discord, message) => {
     let prefix;
 
     if (message.content.replace("!", "").startsWith(`<@${client.user.id}>`)) {
-        prefix = client.prefix[0];
+        prefix = await client.prefixes.get(message.guild.id) || client.prefix[0];
         useMPrefix = true;
     }
 
     let args;
     if (useMPrefix) {
-        args = message.content.slice(prefix.length).trim().split(/\s+/);
+        args = message.content.split(/\s+/).slice(1);
     } else {
 
         if (message.guild && await client.prefixes.get(message.guild.id)) {
