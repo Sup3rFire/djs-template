@@ -17,19 +17,37 @@ module.exports = async (client, Discord, message) => {
     let prefix;
 
     if (message.content.replace("!", "").startsWith(`<@${client.user.id}>`)) {
-        prefix = client.prefix[0];
+        prefix = await client.prefixes.get(message.guild.id) || client.prefix[0];
         useMPrefix = true;
     }
 
     let args;
     if (useMPrefix) {
-        args = message.content.slice(prefix.length).trim().split(/\s+/);
+        args = message.content.split(">").slice(1).join(">").trim().split(/\s+/);
     } else {
-        client.prefix.forEach(item => {
-            if (checkPrefix(message, item)) {
-                prefix = item;
+
+        if (message.guild && await client.prefixes.get(message.guild.id)) {
+
+            let gPrefix = await client.prefixes.get(message.guild.id);
+            if (gPrefix) {
+                if (checkPrefix(message, gPrefix)) {
+                    prefix = gPrefix;
+                }
+            } else {
+                client.prefix.forEach(item => {
+                    if (checkPrefix(message, item)) {
+                        prefix = item;
+                    }
+                });
             }
-        });
+
+        } else {
+            client.prefix.forEach(item => {
+                if (checkPrefix(message, item)) {
+                    prefix = item;
+                }
+            });
+        }
     
         if (!prefix) return;
         args = message.content.slice(prefix.length).trim().split(/\s+/);
@@ -44,7 +62,7 @@ module.exports = async (client, Discord, message) => {
             var mEmbed = new Discord.MessageEmbed()
                 .setTitle(`Online`)
                 .setColor(client.color)
-                .setDescription(`Prefix is: \`${client.prefix[0]}\``);
+                .setDescription(`Prefix is: \`${prefix}\``);
             return message.channel.send(mEmbed);
         } else return;
     }

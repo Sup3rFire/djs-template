@@ -22,7 +22,9 @@ Install the packages using npm in the template's directory
 npm install
 ```
 
-Then, use your favourite text editor to make a file called `.env` in the directory and add the following to the file:
+Then, use your favourite text editor to make a file called `.env` and a folder called `db` in the directory
+
+Finally, put the following to the `.env`:
 
 ```
 TOKEN=YourTokenHere
