@@ -22,7 +22,9 @@ Ungguh *packages* yang diperlukan menggunakan *npm* di direktori dasar ini
 npm install
 ```
 
-Lalu, gunakan program kesukaanmu untuk membuat file yang bernama `.env` di dalam direktori tersebut dan tambahkan yang berikut ini ke dalam file tersebut:
+Lalu, gunakan program kesukaanmu untuk membuat file yang bernama `.env` dan suatu folder yang dinamakan `db` di dalam direktori dasar bot tersebut
+
+Akhirnya, tambahkan yang berikut ini ke dalam file `.env`:
 
 ```
 TOKEN=TokenKamu
