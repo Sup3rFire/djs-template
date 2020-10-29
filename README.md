@@ -1,5 +1,7 @@
 # discord.js Template
 
+Baca ini dalam [Bahasa Indonesia](README-id.md)
+
 This template was designed to be an easy way to start off a discord.js bot with a few essential features that would probably be made anyways.
 
 ## Warning
