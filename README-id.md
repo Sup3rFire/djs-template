@@ -1,6 +1,6 @@
 # Bot Dasar discord.js
 
-Read this in [English](README.md)
+*Read this in [English](README.md)*
 
 Bot dasar ini dibuat sebagai cara yang gampang untuk memulai membuat bot di discord menggunakan discord.js. Bot ini memiliki hal-hal yang dasar yang kemungkinan akan perlu dibuat.
 
@@ -11,8 +11,14 @@ Bot dasar ini sedang dalam proses dikembangkan dan bisa mengandung kesalahan
 ## Keperluan
 
 - Node.js 12.0.0 atau lebih baru
+- npm (biasa diunduh with node.js)
+- *Bot Application* Discord
 - Program untuk mengedit teks
 - Koneksi internet (yang kamu kemungkinan ada)
+
+Berikut adalah bantuan untuk:
+- [Meninstalasi node.js](https://discordjs.guide/preparations/#installing-node-js)
+- [Membuat *Bot Application* Discord](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)
 
 ## Cara Menginstalasi
 
