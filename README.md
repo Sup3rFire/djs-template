@@ -1,6 +1,6 @@
 # discord.js Template
 
-Baca ini dalam [Bahasa Indonesia](README-id.md)
+*Baca ini dalam [Bahasa Indonesia](README-id.md)*
 
 This template was designed to be an easy way to start off a discord.js bot with a few essential features that would probably be made anyways.
 
@@ -11,8 +11,14 @@ This template is still being developed and may contain bugs
 ## Requirements
 
 - Node.js 12.0.0 or newer
+- npm (usually downloaded with node.js)
+- A Bot Application
 - A text editor
 - An internet connection (which you probably have considering you are reading this)
+
+Here is some help to:
+- [Install node.js](https://discordjs.guide/preparations/#installing-node-js)
+- [Creating a bot application](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)
 
 ## Setup
 
