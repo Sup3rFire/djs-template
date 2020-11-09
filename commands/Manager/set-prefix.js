@@ -16,5 +16,6 @@ module.exports.info = {
     aliases: ['setprefix'],
     usage: '[prefix]',
     cooldown: 3,
+    guildOnly: true,
     permissions: 8
 };
