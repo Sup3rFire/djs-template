@@ -1,6 +1,6 @@
 # discord.js Template
 
-*Baca ini dalam [Bahasa Indonesia](README-id.md)*
+_Baca ini dalam [Bahasa Indonesia](README-id.md)_
 
 This template was designed to be an easy way to start off a discord.js bot with a few essential features that would probably be made anyways.
 
@@ -17,6 +17,7 @@ This template is still being developed and may contain bugs
 - An internet connection (which you probably have considering you are reading this)
 
 Here is some help to:
+
 - [Install node.js](https://discordjs.guide/preparations/#installing-node-js)
 - [Creating a bot application](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)
 
@@ -44,21 +45,24 @@ The following lines of code in these files can be swapped to what you want!
 Just switch the placeholders.
 
 server.js
+
 ```javascript
 client.color = "Hex Color Code";
-client.prefix = ['.', ','];
-client.developers = ['Developer ID', 'Another Developer ID'];
+client.prefix = [".", ","];
+client.developers = ["Developer ID", "Another Developer ID"];
 ```
 
 ready.js
+
 ```javascript
 let Statuses = [
-    {text: "some game", type: "PLAYING"},
-    {text: "some youtube video", type: "WATCHING"},
-    {text: "some music", type: "LISTENING"},
-    {text: "something", type: "STREAMING", url: "A Twitch URL"}
+  { text: "some game", type: "PLAYING" },
+  { text: "some youtube video", type: "WATCHING" },
+  { text: "some music", type: "LISTENING" },
+  { text: "something", type: "STREAMING", url: "A Twitch URL" },
 ];
 ```
 
 ## License
+
 [MIT](https://github.com/Sup3rFire/djs-template/blob/master/LICENSE)
