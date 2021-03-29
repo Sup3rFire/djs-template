@@ -4,10 +4,6 @@ _Read this in [English](README.md)_
 
 Bot dasar ini dibuat sebagai cara yang gampang untuk memulai membuat bot di discord menggunakan discord.js. Bot ini memiliki hal-hal yang dasar yang kemungkinan akan perlu dibuat.
 
-## Peringatan
-
-Bot dasar ini sedang dalam proses dikembangkan dan bisa mengandung kesalahan
-
 ## Keperluan
 
 - Node.js 12.0.0 atau lebih baru

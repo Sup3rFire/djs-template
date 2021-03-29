@@ -4,10 +4,6 @@ _Baca ini dalam [Bahasa Indonesia](README-id.md)_
 
 This template was designed to be an easy way to start off a discord.js bot with a few essential features that would probably be made anyways.
 
-## Warning
-
-This template is still being developed and may contain bugs
-
 ## Requirements
 
 - Node.js 12.0.0 or newer
