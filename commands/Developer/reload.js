@@ -10,7 +10,7 @@ module.exports.execute = async (client, message, args, Discord) => {
     );
   const event = client.listenerCount(reloadName);
 
-  if (!command) {
+  if (command) {
     const dir = client.commandDir;
     fs.readdirSync(dir).forEach((dirs) => {
       const commands = fs
