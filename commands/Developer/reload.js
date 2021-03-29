@@ -36,7 +36,9 @@ module.exports.execute = async (client, message, args, Discord) => {
     });
   } else if (event > 0) {
     try {
-      client.removeAllListeners(reloadName);
+      await client.removeAllListeners(reloadName);
+
+      delete require.cache[require.resolve(`../../events/${reloadName}.js`)];
       const event = require(`../../events/${reloadName}.js`);
       client.on(reloadName, event.bind(null, client, Discord));
 
