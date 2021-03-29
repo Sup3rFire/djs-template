@@ -1,7 +1,7 @@
 module.exports = async (client) => {
   console.log("Loaded!");
 
-  let Statuses = [
+  const statuses = [
     { text: "with Super", type: "PLAYING" },
     { text: "Super click circles!", type: "WATCHING" },
     { text: "Cry Thunder", type: "LISTENING" },
@@ -9,7 +9,7 @@ module.exports = async (client) => {
   ];
 
   setInterval(async function () {
-    let status = Statuses[Math.floor(Math.random() * Statuses.length)];
+    const status = statuses[Math.floor(Math.random() * statuses.length)];
 
     client.user
       .setPresence({
