@@ -1,3 +1,6 @@
+# ⚠⚠⚠ WARNING ⚠⚠⚠
+**THIS PROJECT IS NOT AND WILL NOT BE MAINTAINED BECAUSE I HAVE OTHER PROJECTS TO WORK ON**
+
 # discord.js Template
 
 _Baca ini dalam [Bahasa Indonesia](README-id.md)_
